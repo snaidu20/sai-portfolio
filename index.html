@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Saikumar Reddy Naidu - Data Engineer specializing in Python, SQL, AWS, and API Development">
+    <title>Saikumar Reddy Naidu - Data Engineer | Python | SQL | AWS | API</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        nav {
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        #home {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            background: white;
+            color: var(--text-dark);
+            padding-top: 5rem;
+        }
+
+        #home .content {
+            flex: 1;
+        }
+
+        #home .avatar {
+            flex: 0 0 300px;
+            text-align: center;
+        }
+
+        .avatar-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            font-weight: 700;
+            margin: 0 auto 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .intro {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+        }
+
+        .title {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .contact-item a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--bg-light);
+            border-radius: 1rem;
+            box-shadow: var(--card-shadow);
+        }
+
+        .stat-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            color: var(--text-light);
+        }
+
+        #about {
+            background: var(--bg-light);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            text-align: center;
+            font-size: 1.125rem;
+            color: var(--text-light);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--card-shadow);
+        }
+
+        .skill-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: var(--bg-light);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            color: var(--text-dark);
+        }
+
+        .projects-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .project-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-icon {
+            font-size: 2.5rem;
+        }
+
+        .project-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .project-subtitle {
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+
+        .project-description {
+            color: var(--text-light);
+            margin: 1rem 0;
+            line-height: 1.6;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .project-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            transition: color 0.3s;
+        }
+
+        .project-link:hover {
+            color: var(--secondary-color);
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background: var(--primary-color);
+            border: 3px solid white;
+        }
+
+        .timeline-date {
+            color: var(--text-light);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-company {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-subtitle {
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .timeline-item li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .timeline-item li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cert-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: var(--card-shadow);
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: block;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .cert-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cert-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-issuer {
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+
+        .cert-link {
+            color: var(--primary-color);
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+            display: inline-block;
+        }
+
+        #contact {
+            background: var(--bg-light);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+        }
+
+        .contact-card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card a {
+            color: var(--primary-color);
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        footer {
+            background: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.875rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            #home {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">SN</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home">
+        <div class="container" style="display: flex; align-items: center; gap: 4rem;">
+            <div class="content">
+                <p class="intro" style="color: var(--text-light);">Hello, I am</p>
+                <h1 style="color: var(--text-dark);">Saikumar Reddy Naidu</h1>
+                <p class="title" style="color: var(--primary-color);">Data Engineer | Python | SQL | AWS | API</p>
+                <p style="font-size: 1.125rem; margin-bottom: 2rem; color: var(--text-light);">
+                    I'm a data engineer working in healthcare, focused on making complex clinical and device data reliable, accessible, and useful for better decisions.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
+                
+                <div class="stats" style="grid-template-columns: repeat(2, 1fr); margin-top: 2rem;">
+                    <div class="stat-card">
+                        <div class="stat-icon">🔌</div>
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">IoT Research Projects</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-number">40%</div>
+                        <div class="stat-label">Pipeline Optimization</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">☁️</div>
+                        <div class="stat-number">AWS</div>
+                        <div class="stat-label">Certified Engineer</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🎓</div>
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">Certifications</div>
+                    </div>
+                </div>
+            </div>
+            <div class="avatar" style="margin-top: -13rem;">
+                <div class="avatar-circle">SN</div>
+                <h3 style="margin-bottom: 1rem; color: var(--text-dark);">Saikumar Naidu</h3>
+                <p style="margin-bottom: 1.5rem; color: var(--text-light);">Data Engineer @ Upsilonsoft LLC</p>
+                <div class="contact-info" style="grid-template-columns: 1fr; text-align: left;">
+                    <div class="contact-item">
+                        <span>📧</span>
+                        <a href="mailto:snaidu2022@fau.edu">snaidu2022@fau.edu</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>📱</span>
+                        <a href="tel:+19123067209">+1 912-306-7209</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <span>Winder, Georgia, US</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>💼</span>
+                        <a href="https://www.linkedin.com/in/reddysaiu" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p class="about-content">
+                Data Engineer and researcher passionate about IoT-driven healthcare solutions, building end-to-end data workflows for real-time decision making.
+            </p>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3><span>📊</span> Data Engineering</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">PySpark</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">Scala</span>
+                        <span class="tag">ETL</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3><span>☁️</span> Cloud & Big Data</h3>
+                    <div class="skill-tags">
+                        <span class="tag">AWS</span>
+                        <span class="tag">EMR</span>
+                        <span class="tag">S3</span>
+                        <span class="tag">Azure Blob</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3><span>🔌</span> IoT & Healthcare</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Arduino</span>
+                        <span class="tag">Raspberry Pi</span>
+                        <span class="tag">Medical IoT</span>
+                        <span class="tag">Sensors</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3><span>📈</span> Analytics & Viz</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Power BI</span>
+                        <span class="tag">Excel</span>
+                        <span class="tag">Informatica</span>
+                        <span class="tag">Collibra</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>My Projects</h2>
+            <p style="text-align: center; color: var(--text-light); margin-bottom: 3rem;">
+                Featured work in IoT healthcare, supply chain analytics, and data engineering
+            </p>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">🧬</div>
+                        <div class="project-info">
+                            <h3>TrialMatchAI – Clinical Trial Matching AI System</h3>
+                            <p class="project-subtitle">AI & Healthcare • 2025</p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        TrialMatchAI is an AI-powered system that matches patients to suitable clinical trials. It analyzes patient data—such as age, diagnoses, and lab results—and compares it with active trials from ClinicalTrials.gov using machine learning and semantic search. The platform ranks trials by predicted eligibility and provides explainable reports to support physician decisions. By automating trial matching, it helps speed up enrollment and connect patients with potentially life-saving treatments faster.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="tag">AI/ML</span>
+                        <span class="tag">NLP</span>
+                        <span class="tag">Semantic Search</span>
+                        <span class="tag">Healthcare</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/snaidu20/Clinical-Trial-Matching-AI-Agent/tree/main/trialmatch-ai" target="_blank" class="project-link">
+                            💻 GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">🌱</div>
+                        <div class="project-info">
+                            <h3>IoT-Based Smart Irrigation System</h3>
+                            <p class="project-subtitle">IoT Research • Published 2020</p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Designed an IoT irrigation system using sensors, solenoid valves, and wireless communication to optimize water flow based on real-time soil moisture. This is a unique project where we use Solenoid valves integrated with sensors data to turn ON/OFF the water supply rather than turning OFF the motor directly.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="tag">Arduino</span>
+                        <span class="tag">Sensors</span>
+                        <span class="tag">IoT</span>
+                        <span class="tag">Research</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://www.ijrte.org/portfolio-item/A1979059120/" target="_blank" class="project-link">
+                            📄 Read Publication →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">📦</div>
+                        <div class="project-info">
+                            <h3>Global Supply Chain Demand Pressure Monitoring System</h3>
+                            <p class="project-subtitle">Supply Chain Analytics • 2026</p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Developed a system that tracks real-time global availability of critical part numbers by aggregating data from open market sources (e.g., TrustedParts, FindChips) and combining it with internal demand signals. The platform computes a Demand Pressure Index to guide procurement decisions such as buy, hold, delay, or expedite, enabling proactive and data-driven supply planning.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="tag">Power BI</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Analytics</span>
+                        <span class="tag">API</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://lnkd.in/eNMwrD9n" target="_blank" class="project-link">
+                            📊 Dashboard →
+                        </a>
+                        <a href="https://lnkd.in/ezfRFHH7" target="_blank" class="project-link">
+                            💻 GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">📍</div>
+                        <div class="project-info">
+                            <h3>Location-Based Student Attendance System</h3>
+                            <p class="project-subtitle">Web App Development • Security • 2022</p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Built a secure attendance system that verifies physical presence by matching student and faculty GPS locations with a time-based passcode. Attendance is recorded only when both are co-located, preventing proxy and remote check-ins common in traditional and online systems.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="tag">GPS</span>
+                        <span class="tag">Mobile Dev</span>
+                        <span class="tag">Security</span>
+                        <span class="tag">Authentication</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://drive.google.com/drive/folders/10vj8j9zrqjEkeGk2CrLhaeLHK9vO9jJb?usp=sharing" target="_blank" class="project-link">
+                            🎥 Demo & Docs →
+                        </a>
+                        <a href="https://github.com/snaidu20/StudentAttendance" target="_blank" class="project-link">
+                            💻 GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">🏥</div>
+                        <div class="project-info">
+                            <h3>IoT Patient Vitals Streaming Pipeline</h3>
+                            <p class="project-subtitle">Healthcare IoT • BMS</p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Building real-time data pipelines that ingest sensor-driven medical device streams for early-risk detection and patient monitoring.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="tag">AWS</span>
+                        <span class="tag">Medical IoT</span>
+                        <span class="tag">Real-time</span>
+                        <span class="tag">Healthcare</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">💼</div>
+                        <div class="project-info">
+                            <h3>Enterprise Data Lake Modernization</h3>
+                            <p class="project-subtitle">Cloud Migration • Progress Solutions</p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Migrated on-prem datasets to cloud, built automated ETL pipelines, reduced run times by 40% through optimization.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="tag">AWS S3</span>
+                        <span class="tag">PySpark</span>
+                        <span class="tag">ETL</span>
+                        <span class="tag">Azure</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2>My Experience</h2>
+            <p style="text-align: center; color: var(--text-light); margin-bottom: 3rem;">
+                Professional journey in data engineering and IoT healthcare
+            </p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <p class="timeline-date">May 2025 – Present</p>
+                    <h3 class="timeline-title">Data Engineer</h3>
+                    <p class="timeline-company">Upsilonsoft LLC (Client: Bristol Myers Squibb)</p>
+                    <p class="timeline-subtitle">IoT-Enabled Patient Vitals Streaming & Early-Risk Detection</p>
+                    <ul>
+                        <li>Analyze large-scale patient & IoT-healthcare data for clinical workflow improvements</li>
+                        <li>Build data pipelines ingesting sensor-driven medical device streams</li>
+                        <li>Collaborate on connected health system initiatives with device telemetry</li>
+                        <li>Develop automated insights for smarter diagnostics and patient-care decisions</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <p class="timeline-date">Jun 2024 – May 2025</p>
+                    <h3 class="timeline-title">Data Engineer Intern</h3>
+                    <p class="timeline-company">Progress Solutions</p>
+                    <p class="timeline-subtitle">Enterprise Data Lake Modernization & ETL Automation</p>
+                    <ul>
+                        <li>Migrated multiple on-prem datasets into cloud data lake (AWS S3/Azure)</li>
+                        <li>Built automated ETL pipelines using Python, SQL, and PySpark</li>
+                        <li>Reduced pipeline run times by 40% through optimization</li>
+                        <li>Implemented schema evolution and metadata tracking</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <p class="timeline-date">Apr 2021 – Jul 2022</p>
+                    <h3 class="timeline-title">Project Engineer</h3>
+                    <p class="timeline-company">Wipro</p>
+                    <p class="timeline-subtitle">Smart Workflow Optimization Using System Telemetry</p>
+                    <ul>
+                        <li>Designed dashboards showing system health and workflow bottlenecks</li>
+                        <li>Developed predictive model for identifying overload conditions</li>
+                        <li>Implemented automation reducing processing time by 30%</li>
+                        <li>Integrated data signals from multiple internal systems</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2 style="margin-top: 5rem;">Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3 class="timeline-title">🎓 Master of Science in Computer Science</h3>
+                    <p class="timeline-company">Florida Atlantic University</p>
+                    <p class="timeline-date">2024</p>
+                    <p class="project-description">
+                        <strong>Key Coursework:</strong> Internet of Things, Artificial Intelligence, Deep Learning, NLP, AI in Healthcare, Information Theory, Systems & Network Administration
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3 class="timeline-title">🎓 Bachelor of Engineering</h3>
+                    <p class="timeline-company">Anna University</p>
+                    <p class="timeline-date">Electronics and Communication • 2020</p>
+                    <p class="project-description">
+                        <strong>Key Coursework:</strong> Wireless Communication, Antenna & Wave Propagation, Microcontrollers, Embedded Systems, Signal Processing
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications">
+        <div class="container">
+            <h2>Certifications</h2>
+            <div class="certifications-grid">
+                <a href="certificates/AWS_Certified_Data_Engineer_Associate_certificate.pdf" target="_blank" class="cert-card">
+                    <div class="cert-icon">☁️</div>
+                    <h3 class="cert-title">AWS Certified Data Engineer - Associate</h3>
+                    <p class="cert-issuer">Amazon Web Services</p>
+                    <span class="cert-link">View Certificate →</span>
+                </a>
+
+                <a href="certificates/Project_Management_Professional.pdf" target="_blank" class="cert-card">
+                    <div class="cert-icon">📊</div>
+                    <h3 class="cert-title">PMP - Project Management Professional</h3>
+                    <p class="cert-issuer">Project Management Institute</p>
+                    <span class="cert-link">View Certificate →</span>
+                </a>
+
+                <a href="certificates/PowerBI.pdf" target="_blank" class="cert-card">
+                    <div class="cert-icon">📈</div>
+                    <h3 class="cert-title">Power BI</h3>
+                    <p class="cert-issuer">Pragmatic Works</p>
+                    <span class="cert-link">View Certificate →</span>
+                </a>
+
+                <a href="certificates/Artificial_Intelligence_Foundations.pdf" target="_blank" class="cert-card">
+                    <div class="cert-icon">🤖</div>
+                    <h3 class="cert-title">AI Foundations: Thinking Machines</h3>
+                    <p class="cert-issuer">LinkedIn Learning</p>
+                    <span class="cert-link">View Certificate →</span>
+                </a>
+
+                <a href="certificates/Certificate_Of_Completion_Financial_Modeling_and_Forecasting_Financial_Statements.pdf" target="_blank" class="cert-card">
+                    <div class="cert-icon">💰</div>
+                    <h3 class="cert-title">Financial Modeling & Forecasting</h3>
+                    <p class="cert-issuer">LinkedIn Learning</p>
+                    <span class="cert-link">View Certificate →</span>
+                </a>
+
+                <a href="certificates/Career_Essentials_in_Business_analysis.pdf" target="_blank" class="cert-card">
+                    <div class="cert-icon">📊</div>
+                    <h3 class="cert-title">Career Essentials in Business Analysis</h3>
+                    <p class="cert-issuer">Microsoft & LinkedIn Learning</p>
+                    <span class="cert-link">View Certificate →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Let's Connect</h2>
+            <p style="text-align: center; color: var(--text-light); margin-bottom: 3rem;">
+                Feel free to reach out for collaborations, opportunities, or just to connect!
+            </p>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-card-icon">📧</div>
+                    <h3>Email</h3>
+                    <a href="mailto:snaidu2022@fau.edu">snaidu2022@fau.edu</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-card-icon">📱</div>
+                    <h3>Phone</h3>
+                    <a href="tel:+19123067209">+1 912-306-7209</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-card-icon">💼</div>
+                    <h3>LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/reddysaiu" target="_blank">Connect with me</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-card-icon">📍</div>
+                    <h3>Location</h3>
+              
