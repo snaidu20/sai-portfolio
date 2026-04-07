@@ -12,6 +12,15 @@ I'm a Data Engineer working in healthcare, focused on making complex clinical an
 
 ## 🚀 Featured Projects
 
+### 🩻 MedGemma Medical Image Analyzer
+**AI & Medical Imaging • 2026**
+- Developed an AI-powered chest X-ray analyzer using Google's MedGemma foundation model
+- Auto-detects imaging modality and generates detailed radiology reports
+- Reports are tailored for both clinicians and patients
+- Deployed via GPU-backed cloud environments for real-time inference
+- **Tech Stack**: Google MedGemma, Medical Imaging, AI/ML, Radiology, Cloud GPU
+- [💻 GitHub & Demo Video](https://github.com/snaidu20/Google_medgemma_medical_image_analyzer/tree/main/medgemma-chest-xray-analyzer)
+
 ### 🧬 TrialMatchAI – Clinical Trial Matching AI System
 **AI & Healthcare • 2025**
 - AI-powered system that matches patients to suitable clinical trials
@@ -156,4 +165,4 @@ This portfolio is built with:
 
 ---
 
-**Last Updated**: March 2026
+**Last Updated**: April 2026
