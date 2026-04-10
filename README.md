@@ -2,7 +2,7 @@
 
 Personal portfolio website showcasing my work as a Data Engineer specializing in Python, SQL, AWS, and API Development.
 
-🔗 **Live Site**: [snaidu20.github.io](https://snaidu20.github.io)
+🔗 **Live Site**: [sainaidu20.github.io](https://sainaidu20.github.io)
 
 ## 👨‍💻 About Me
 
