@@ -667,57 +667,97 @@
         <div class="container">
             <h2>My Projects</h2>
             <p style="text-align: center; color: var(--text-light); margin-bottom: 3rem;">
-                Featured work in IoT healthcare, supply chain analytics, and data engineering
+                Featured work in AI-driven transportation safety, infrastructure resilience, and data engineering
             </p>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-header">
-                        <div class="project-icon">🩻</div>
+                        <div class="project-icon">🚦</div>
                         <div class="project-info">
-                            <h3>MedGemma Medical Image Analyzer</h3>
-                            <p class="project-subtitle">AI & Medical Imaging • 2026</p>
+                            <h3>CrashLens – Crash Severity Prediction</h3>
+                            <p class="project-subtitle">AI &amp; Transportation Safety • 2026</p>
                         </div>
                     </div>
                     <p class="project-description">
-                        Developed an AI-powered chest X-ray analyzer using Google's MedGemma foundation model that auto-detects modality and generates detailed clinician- and patient-friendly radiology reports via a GPU-backed cloud environment.
+                        SHAP-driven crash severity prediction across 477,801 NHTSA crash records using an ensemble of Random Forest, XGBoost, LightGBM, and FT-Transformer models. Achieves 44.9% balanced accuracy with 42.6% fatal crash sensitivity. SHAP analysis identifies ejection, restraint use, and vehicle age as the strongest risk factors for 5-class KABCO severity prediction.
                     </p>
                     <div class="skill-tags">
-                        <span class="tag">Google MedGemma</span>
-                        <span class="tag">Medical Imaging</span>
-                        <span class="tag">AI/ML</span>
-                        <span class="tag">Radiology</span>
-                        <span class="tag">Cloud GPU</span>
+                        <span class="tag">XGBoost</span>
+                        <span class="tag">LightGBM</span>
+                        <span class="tag">FT-Transformer</span>
+                        <span class="tag">SHAP</span>
+                        <span class="tag">SMOTE</span>
+                        <span class="tag">NHTSA CRSS</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/snaidu20/Google_medgemma_medical_image_analyzer/tree/main/medgemma-chest-xray-analyzer" target="_blank" class="project-link">
-                            💻 GitHub &amp; Demo Video →
+                        <a href="https://github.com/snaidu20/Crashlens" target="_blank" class="project-link">
+                            💻 GitHub →
+                        </a>
+                        <a href="https://snaidu20.github.io/Crashlens/" target="_blank" class="project-link">
+                            📊 Dashboard →
                         </a>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-header">
-                        <div class="project-icon">🧬</div>
+                        <div class="project-icon">🚧</div>
                         <div class="project-info">
-                            <h3>TrialMatchAI – Clinical Trial Matching AI System</h3>
-                            <p class="project-subtitle">AI & Healthcare • 2026</p>
+                            <h3>WorkZoneSafe FL – Near-Miss Risk Detection</h3>
+                            <p class="project-subtitle">AI &amp; Work Zone Safety • 2026</p>
                         </div>
                     </div>
                     <p class="project-description">
-                        TrialMatchAI is an AI-powered system that matches patients to suitable clinical trials. It analyzes patient data—such as age, diagnoses, and lab results—and compares it with active trials from ClinicalTrials.gov using machine learning and semantic search. The platform ranks trials by predicted eligibility and provides explainable reports to support physician decisions. By automating trial matching, it helps speed up enrollment and connect patients with potentially life-saving treatments faster.
+                        Connected vehicle BSM-based near-miss risk prediction for Florida work zones using XGBoost (AUC-ROC 0.847). Trains on CitySim trajectory data with TTC-derived labels and 5-minute feature windows. Identifies the top 5 highest-risk Tampa metro corridors — CMVs account for 47% of fatal work zone crashes despite 12% of traffic volume.
                     </p>
                     <div class="skill-tags">
-                        <span class="tag">AI/ML</span>
-                        <span class="tag">NLP</span>
-                        <span class="tag">Semantic Search</span>
-                        <span class="tag">Healthcare</span>
+                        <span class="tag">XGBoost</span>
+                        <span class="tag">Connected Vehicles</span>
+                        <span class="tag">SHAP</span>
+                        <span class="tag">CitySim</span>
+                        <span class="tag">FDOT</span>
+                        <span class="tag">TTC/PET</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/snaidu20/Clinical-Trial-Matching-AI-Agent/tree/main/trialmatch-ai" target="_blank" class="project-link">
+                        <a href="https://github.com/snaidu20/WorkZoneSafe_FL" target="_blank" class="project-link">
                             💻 GitHub →
+                        </a>
+                        <a href="https://snaidu20.github.io/WorkZoneSafe_FL/" target="_blank" class="project-link">
+                            📊 Dashboard →
                         </a>
                     </div>
                 </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">🌀</div>
+                        <div class="project-info">
+                            <h3>SignalGuard – Hurricane Traffic Signal Risk Intelligence</h3>
+                            <p class="project-subtitle">AI &amp; Disaster Resilience • 2026</p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        XGBoost model (AUC-ROC 0.916) predicting hurricane-induced traffic signal outages across 11,186 intersections in 5 Gulf Coast cities. Combines spatial criticality scoring with 5 evidence-based power adaptation strategies to extend backup runtime from 4–8 hours to 72+ hours — meeting FDOT's Cat 3+ storm minimum without additional hardware.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="tag">XGBoost</span>
+                        <span class="tag">SHAP</span>
+                        <span class="tag">Leaflet.js</span>
+                        <span class="tag">NOAA</span>
+                        <span class="tag">HURDAT2</span>
+                        <span class="tag">FEMA</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/snaidu20/Signal_Guard" target="_blank" class="project-link">
+                            💻 GitHub →
+                        </a>
+                        <a href="https://snaidu20.github.io/Signal_Guard/" target="_blank" class="project-link">
+                            📊 Dashboard →
+                        </a>
+                    </div>
+                </div>
+
+
 
                 <div class="project-card">
                     <div class="project-header">
