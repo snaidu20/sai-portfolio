@@ -316,8 +316,34 @@
 
         .project-description {
             color: var(--text-light);
-            margin: 1rem 0;
+            margin: 0.5rem 0 1rem;
             line-height: 1.6;
+        }
+
+        .project-section-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--primary-color);
+            margin-bottom: 0.4rem;
+            margin-top: 1.25rem;
+        }
+
+        .project-divider {
+            border: none;
+            border-top: 1px solid #e5e7eb;
+            margin: 1.25rem 0 1rem;
+        }
+
+        .tag-ai {
+            background: #eff6ff;
+            color: #1d4ed8;
+            border: 1px solid #bfdbfe;
+            padding: 0.35rem 0.85rem;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            font-weight: 500;
         }
 
         .project-links {
@@ -678,16 +704,23 @@
                             <p class="project-subtitle">AI &amp; Transportation Safety • 2026</p>
                         </div>
                     </div>
+                    <p class="project-section-label">Project Overview</p>
                     <p class="project-description">
-                        SHAP-driven crash severity prediction across 477,801 NHTSA crash records using an ensemble of Random Forest, XGBoost, LightGBM, and FT-Transformer models. Achieves 44.9% balanced accuracy with 42.6% fatal crash sensitivity. SHAP analysis identifies ejection, restraint use, and vehicle age as the strongest risk factors for 5-class KABCO severity prediction.
+                        SHAP-driven crash severity prediction across 477,801 NHTSA crash records (2020–2023) using an ensemble of Random Forest, XGBoost, LightGBM, and FT-Transformer models. Achieves 44.9% balanced accuracy with 42.6% fatal crash sensitivity on a heavily imbalanced 5-class KABCO dataset. SHAP analysis pinpoints ejection status, restraint use, and vehicle age as the dominant risk factors — providing explainable, actionable insights for traffic safety engineers and policy makers.
                     </p>
+                    <hr class="project-divider">
+                    <p class="project-section-label">Tech Stack</p>
                     <div class="skill-tags">
-                        <span class="tag">XGBoost</span>
-                        <span class="tag">LightGBM</span>
-                        <span class="tag">FT-Transformer</span>
-                        <span class="tag">SHAP</span>
-                        <span class="tag">SMOTE</span>
-                        <span class="tag">NHTSA CRSS</span>
+                        <span class="tag-ai">XGBoost</span>
+                        <span class="tag-ai">LightGBM</span>
+                        <span class="tag-ai">FT-Transformer</span>
+                        <span class="tag-ai">Random Forest</span>
+                        <span class="tag-ai">SHAP</span>
+                        <span class="tag-ai">SMOTE</span>
+                        <span class="tag-ai">Python</span>
+                        <span class="tag-ai">NHTSA CRSS</span>
+                        <span class="tag-ai">scikit-learn</span>
+                        <span class="tag-ai">Plotly / Dash</span>
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/snaidu20/Crashlens" target="_blank" class="project-link">
@@ -707,16 +740,23 @@
                             <p class="project-subtitle">AI &amp; Work Zone Safety • 2026</p>
                         </div>
                     </div>
+                    <p class="project-section-label">Project Overview</p>
                     <p class="project-description">
-                        Connected vehicle BSM-based near-miss risk prediction for Florida work zones using XGBoost (AUC-ROC 0.847). Trains on CitySim trajectory data with TTC-derived labels and 5-minute feature windows. Identifies the top 5 highest-risk Tampa metro corridors — CMVs account for 47% of fatal work zone crashes despite 12% of traffic volume.
+                        Connected vehicle BSM-based near-miss risk prediction system for Florida highway work zones. Trained on 43,200 CitySim trajectory windows with TTC/PET-derived conflict labels, an XGBoost classifier achieves AUC-ROC 0.847 — identifying dangerous vehicle interactions before they escalate. SHAP analysis reveals speed differential, following distance, and CMV presence as top risk drivers. CMVs account for 47% of fatal work zone crashes despite only 12% of traffic volume. The dashboard flags the top 5 highest-risk Tampa metro corridors to guide FDOT deployment decisions.
                     </p>
+                    <hr class="project-divider">
+                    <p class="project-section-label">Tech Stack</p>
                     <div class="skill-tags">
-                        <span class="tag">XGBoost</span>
-                        <span class="tag">Connected Vehicles</span>
-                        <span class="tag">SHAP</span>
-                        <span class="tag">CitySim</span>
-                        <span class="tag">FDOT</span>
-                        <span class="tag">TTC/PET</span>
+                        <span class="tag-ai">XGBoost</span>
+                        <span class="tag-ai">SHAP</span>
+                        <span class="tag-ai">Python</span>
+                        <span class="tag-ai">CitySim (NGSIM)</span>
+                        <span class="tag-ai">TTC / PET</span>
+                        <span class="tag-ai">Connected Vehicles (BSM)</span>
+                        <span class="tag-ai">FDOT Standards</span>
+                        <span class="tag-ai">scikit-learn</span>
+                        <span class="tag-ai">Leaflet.js</span>
+                        <span class="tag-ai">Plotly / Dash</span>
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/snaidu20/WorkZoneSafe_FL" target="_blank" class="project-link">
@@ -736,16 +776,23 @@
                             <p class="project-subtitle">AI &amp; Disaster Resilience • 2026</p>
                         </div>
                     </div>
+                    <p class="project-section-label">Project Overview</p>
                     <p class="project-description">
-                        XGBoost model (AUC-ROC 0.916) predicting hurricane-induced traffic signal outages across 11,186 intersections in 5 Gulf Coast cities. Combines spatial criticality scoring with 5 evidence-based power adaptation strategies to extend backup runtime from 4–8 hours to 72+ hours — meeting FDOT's Cat 3+ storm minimum without additional hardware.
+                        XGBoost model (AUC-ROC 0.916, 5-fold CV 0.898 ± 0.017) predicting hurricane-induced traffic signal outages across 11,186 intersections in 5 Gulf Coast cities — Houston, New Orleans, Miami, Jackson, and Charlotte. Integrates NOAA storm tracks, FEMA flood zones, LED adoption rates, and spatial criticality scoring to rank signal vulnerability. Five evidence-based power adaptation strategies (tiered mode scheduling, LED upgrades, green wave corridors, automated battery switching, demand-responsive cycling) extend backup runtime from 4–8 hours to 72+ hours — meeting FDOT's Category 3+ storm minimum with no additional hardware.
                     </p>
+                    <hr class="project-divider">
+                    <p class="project-section-label">Tech Stack</p>
                     <div class="skill-tags">
-                        <span class="tag">XGBoost</span>
-                        <span class="tag">SHAP</span>
-                        <span class="tag">Leaflet.js</span>
-                        <span class="tag">NOAA</span>
-                        <span class="tag">HURDAT2</span>
-                        <span class="tag">FEMA</span>
+                        <span class="tag-ai">XGBoost</span>
+                        <span class="tag-ai">SHAP</span>
+                        <span class="tag-ai">Python</span>
+                        <span class="tag-ai">NOAA / HURDAT2</span>
+                        <span class="tag-ai">FEMA Flood Zones</span>
+                        <span class="tag-ai">Leaflet.js</span>
+                        <span class="tag-ai">scikit-learn</span>
+                        <span class="tag-ai">GeoJSON / Spatial Analysis</span>
+                        <span class="tag-ai">JavaScript / HTML</span>
+                        <span class="tag-ai">Chart.js</span>
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/snaidu20/Signal_Guard" target="_blank" class="project-link">
